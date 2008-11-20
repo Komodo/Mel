@@ -28,3 +28,39 @@ class KoMelLanguage(KoUDLLanguage):
     commentDelimiterInfo = {
         "line": [ "//", ],
     }
+
+    variableIndicators = '$'
+    _dedenting_statements = [u'return', u'break', u'continue']
+    _indenting_statements = [u'case']
+    supportsSmartIndent = "brace"
+
+    sample = """// animated duplicate/instance script
+proc animatedDuplication(int $rangeStart, int $rangeEnd,
+                         int $numOfDuplicates, int $duplicateOrInstance) {
+    int $range_start = $rangeStart;
+    int $range_end = $rangeEnd;
+    int $num_of_duplicates = $numOfDuplicates;
+    int $step_size = ($range_end - $range_start) / $num_of_duplicates;
+    int $i = 0;
+    int $temp;
+  
+    currentTime $range_start;     // set to range start
+  
+    string $selectedObjects[];    // to store selected objects
+    $selectedObjects = `ls -sl`;  // store selected objects
+    select $selectedObjects;
+  
+    while ($i <= $num_of_duplicates) {
+        $temp = $range_start + ($step_size * $i);
+        currentTime ($temp);
+        // seleced the objects to duplicate or instance
+        select $selectedObjects;
+        if ($duplicateOrInstance == 0) {
+            duplicate;
+        } else {
+            instance;
+        }
+        $i++;
+    }
+}
+"""
