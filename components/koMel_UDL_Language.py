@@ -64,3 +64,9 @@ proc animatedDuplication(int $rangeStart, int $rangeEnd,
     }
 }
 """
+
+    # Overriding these base methods to work around bug 81066.
+    def get_linter(self):
+        return None
+    def get_interpreter(self):
+        None
