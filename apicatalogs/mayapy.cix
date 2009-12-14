@@ -4,6 +4,20 @@
 
 <codeintel version="2.0" name="Maya" description="Maya Python Commands and API">
   <file lang="Python" mtime="1257054094.05" path="mayapy.cix">
+      <scope ilk="blob" lang="Python" name="maya">
+          <import module="app" />
+          <import module="cmds" />
+          <import module="mel" />
+          <import module="OpenMaya" />
+          <import module="OpenMayaAnim" />
+          <import module="OpenMayaCloth" />
+          <import module="OpenMayaFX" />
+          <import module="OpenMayaMPx" />
+          <import module="OpenMayaRender" />
+          <import module="OpenMayaUI" />
+          <import module="standalone" />
+          <import module="utils" />
+      </scope>
       <scope ilk="blob" lang="Python" name="maya.utils">
           <scope ilk="class" lang="Python" name="Output">
               <variable citdl="int" name="flush"/>
