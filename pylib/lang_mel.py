@@ -13,11 +13,11 @@ import logging
 import operator
 
 from codeintel2.common import *
-from codeintel2.citadel import CitadelBuffer, CitadelLangIntel
+from codeintel2.citadel import CitadelLangIntel
 from codeintel2.langintel import LangIntel
 from codeintel2.langintel import (ParenStyleCalltipIntelMixin,
                                   ProgLangTriggerIntelMixin)
-from codeintel2.udl import UDLLexer
+from codeintel2.udl import UDLLexer, UDLBuffer, UDLCILEDriver
 from codeintel2.util import CompareNPunctLast
 
 from SilverCity.ScintillaConstants import (
@@ -307,7 +307,7 @@ class MelLangIntel(CitadelLangIntel, ParenStyleCalltipIntelMixin,
 #   http://listserv.activestate.com/mailman/listinfo/komodo-discuss
 #   http://listserv.activestate.com/mailman/listinfo/komodo-beta
 #
-class MelBuffer(CitadelBuffer):
+class MelBuffer(UDLBuffer):
     # Dev Note: What to sub-class from?
     # - If this is a UDL-based language: codeintel2.udl.UDLBuffer
     # - Else if this is a programming language (it has functions,
@@ -334,7 +334,7 @@ class MelBuffer(CitadelBuffer):
 # multi-lang (i.e. can contain sections of different language content,
 # e.g. HTML can contain markup, JavaScript and CSS), then you will need
 # to also implement "scan_multilang()".
-class MelCILEDriver(CILEDriver):
+class MelCILEDriver(UDLCILEDriver):
     lang = lang
 
     def scan_purelang(self, buf):
