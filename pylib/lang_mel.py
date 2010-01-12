@@ -341,7 +341,22 @@ class MelCILEDriver(UDLCILEDriver):
         import cile_mel
         return cile_mel.scan_buf(buf)
 
+    def scan_multilang(self, buf, csl_cile_driver=None):
+        """Scan the given multilang (UDL-based) buffer and return a CIX
+        element tree.
 
+            "buf" is the multi-lang Buffer instance (e.g.
+                lang_rhtml.RHTMLBuffer for RHTML).
+            "csl_cile_driver" (optional) is the CSL (client-side language)
+                CILE driver. While scanning, CSL tokens should be gathered and,
+                if any, passed to the CSL scanner like this:
+                    csl_cile_driver.scan_csl_tokens(
+                        file_elem, blob_name, csl_tokens)
+                The CSL scanner will append a CIX <scope ilk="blob"> element
+                to the <file> element.
+        """
+        import cile_mel
+        return cile_mel.scan_buf(buf)
 
 
 #---- registration
