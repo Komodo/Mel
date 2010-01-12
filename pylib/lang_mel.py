@@ -314,6 +314,7 @@ class MelBuffer(UDLBuffer):
     #   variables, classes, etc.): codeintel2.citadel.CitadelBuffer
     # - Otherwise: codeintel2.buffer.Buffer
     lang = lang
+    ssl_lang = lang
 
     cb_show_if_empty = True
 
@@ -336,6 +337,7 @@ class MelBuffer(UDLBuffer):
 # to also implement "scan_multilang()".
 class MelCILEDriver(UDLCILEDriver):
     lang = lang
+    ssl_lang = lang
 
     def scan_purelang(self, buf):
         import cile_mel
