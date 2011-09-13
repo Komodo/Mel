@@ -8,10 +8,12 @@
 
 language Mel
 
+# Need to start with family set to markup and state as IN_M_DEFAULT, we'll later
+# perform a null-transition change to get into SSL state.
 family markup
 initial IN_M_DEFAULT
 
-# Need to get into a state with keywords -- use SSL
+# Null-transition to get into SSL state
 state IN_M_DEFAULT:
 /./ : redo, => IN_SSL_DEFAULT
 
