@@ -1,16 +1,18 @@
 # Mel
+
 This is an extension to provide Maya Embedded Language (MEL) scripting support
 to Komodo.
 
 ## About
 
 This extension provides features such as:
+* defines the "Mel" language
 * maps ".mel" files to the Mel language
 * syntax highlighting (coloring)
 * basic codeintel completions for variables, built-in functions and keywords
 * smart brace indenting
 * commenting/uncommenting support for "//"
-* Code Intelligence API Catalog for Maya (thanks to JTilden)
+* code intelligence API catalog for Maya (thanks to JTilden)
 
 ## Installing
 
