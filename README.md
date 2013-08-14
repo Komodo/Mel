@@ -5,9 +5,12 @@ to Komodo.
 ## About
 
 This extension provides features such as:
+* maps ".mel" files to the Mel language
 * syntax highlighting (coloring)
-* codeintel completions for variables and built-in functions
-* smart indenting
+* basic codeintel completions for variables, built-in functions and keywords
+* smart brace indenting
+* commenting/uncommenting support for "//"
+* Code Intelligence API Catalog for Maya (thanks to JTilden)
 
 ## Installing
 
